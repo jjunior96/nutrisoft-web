@@ -1,9 +1,9 @@
-import Dashboard from 'templates/Dashboard';
+import SignIn from 'templates/SignIn';
 
 export default function Home() {
   return (
     <>
-      <Dashboard />
+      <SignIn />
     </>
   );
 }
