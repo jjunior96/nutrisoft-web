@@ -18,7 +18,6 @@ const Input = ({ name, label, ...rest }: InputProps) => {
       <ChackraInput
         name={name}
         id={name}
-        focusBorderColor="blue.300"
         backgroundColor="white"
         variant="filled"
         size="lg"
@@ -26,7 +25,8 @@ const Input = ({ name, label, ...rest }: InputProps) => {
           bgColor: 'white'
         }}
         _focus={{
-          bgColor: 'white'
+          backgroundColor: 'white',
+          borderColor: 'blue.300'
         }}
         {...rest}
       />

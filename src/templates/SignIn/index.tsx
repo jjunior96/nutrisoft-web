@@ -1,9 +1,18 @@
+import { useCallback } from 'react';
+import { useForm } from 'react-hook-form';
+
 import { Flex, Stack, Text } from '@chakra-ui/react';
 
 import Button from 'components/Button';
 import Input from 'components/Form/Input';
 
 const SignIn = () => {
+  const { register, handleSubmit } = useForm();
+
+  const handleLoginSubmit = useCallback(async (data) => {
+    console.log(data);
+  }, []);
+
   return (
     <Flex
       width="100vw"
@@ -20,6 +29,7 @@ const SignIn = () => {
         borderRadius="8px"
         flexDirection="column"
         boxShadow="2xl"
+        onSubmit={handleSubmit(handleLoginSubmit)}
       >
         <Text
           fontSize="2xl"
@@ -33,9 +43,9 @@ const SignIn = () => {
 
         {/* Stack => Container para dar espaçamento entre os inputs */}
         <Stack spacing="2">
-          <Input name="email" label="Email" type="email" />
+          <Input label="Email" type="email" {...register('email')} />
 
-          <Input name="password" label="Senha" type="password" />
+          <Input label="Senha" type="password" {...register('password')} />
         </Stack>
 
         <Button type="submit" marginTop="7">
