@@ -1,12 +1,19 @@
+import { Flex } from '@chakra-ui/react';
+
+import Header from 'components/Header';
 import Main from 'components/Main';
+import Sidebar from 'components/Sidebar';
+import Title from 'components/Title';
 
-import * as S from './styles';
-
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
   return (
-    <S.Container>
-      <Main />
-    </S.Container>
+    <Flex width="100vw">
+      <Sidebar />
+      <Header />
+      <Main>
+        <Title>Foi</Title>
+      </Main>
+    </Flex>
   );
 };
 
